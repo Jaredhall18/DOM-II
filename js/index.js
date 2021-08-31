@@ -19,8 +19,6 @@ const strobeBackground = function() {
 }
 
 strobeHeader.addEventListener('wheel', strobeBackground);
-// const strobeEffect = setInterval(strobeBackground, 500);
-// const strobeEffect = setInterval;
 
 //Alert Message When clicking Sign Me Up!
 const sunFunButton = document.querySelector('header');
@@ -31,10 +29,27 @@ sunFunButton.addEventListener('click', event => {
 
 //keypress
 
-//keydown Create border around Fun Bus 
+//KeyDown Changes body Background Color to Black
+const headerColor = document.querySelector('body');
+
+document.addEventListener('keydown', event => {
+    if(event.key === 'Escape') {
+        headerColor.style.backgroundColor = "black";
+    }
+});
+
+
+//KeyUp Changes body Background Color to White
+headerColor.addEventListener('keyup', event => {
+    if(event.key === 'Escape') {
+        headerColor.style.backgroundColor = "white";
+    }
+});
+
+// Create border around Fun Bus on Page Load
 const funBusBorder = document.querySelector('.content-destination img');
 
-funBusBorder.addEventListener('load', event => {
+funBusBorder.addEventListener('load', event => { 
         funBusBorder.style.borderColor = "blue";
         funBusBorder.style.borderWidth = "10px";
         funBusBorder.style.borderStyle = "solid";
