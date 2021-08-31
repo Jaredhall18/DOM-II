@@ -28,7 +28,7 @@ sunFunButton.addEventListener('click', event => {
 })
 
 //keypress
-
+// navHover.addEventListener('keypress', )
 //KeyDown Changes body Background Color to Black
 const headerColor = document.querySelector('body');
 
@@ -64,3 +64,26 @@ function shrink(event){
 }
 
 images.forEach(element => element.addEventListener('dblclick', shrink));
+
+//propogation
+function propFunc(event) {
+    consolelog(`event passing through ${event.currentTarget.nodeName || 'Window'}
+    target --> ${event.target.nodename}
+    `)
+}
+
+window.addEventListener('click', propFunc);
+firstDiv.addEventListener('click', propFunc);
+document.addEventListener('click', propFunc);
+
+document.body.addEventListener('click', (event) => event.stopPropagation());
+document.body.addEventListener('click', propFunc);
+firstButton.addEventListener('click', propFunc);
+
+//Prevent Default of a tags in Nav
+const anchorLinks = document.querySelectorAll('.nav-link');
+
+anchorLinks.forEach(element => element.addEventListener("click", function(event){
+    event.preventDefault()
+  }));
+
