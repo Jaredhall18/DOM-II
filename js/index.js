@@ -1,4 +1,4 @@
-// Your code goes here
+
 //MouseOver Event
 const navHover = document.querySelector('.nav');
 
@@ -28,7 +28,10 @@ sunFunButton.addEventListener('click', event => {
 })
 
 //keypress
-// navHover.addEventListener('keypress', )
+navHover.addEventListener('keypress', event => {
+    navHover.style.fontSize = "2em"
+});
+
 //KeyDown Changes body Background Color to Black
 const headerColor = document.querySelector('body');
 
@@ -65,12 +68,12 @@ function shrink(event){
 
 images.forEach(element => element.addEventListener('dblclick', shrink));
 
-//propogation
+//propagation
 function propFunc(event) {
-    consolelog(`event passing through ${event.currentTarget.nodeName || 'Window'}
+    console.log(`event passing through ${event.currentTarget.nodeName || 'Window'}
     target --> ${event.target.nodename}
     `)
-}
+};
 
 window.addEventListener('click', propFunc);
 firstDiv.addEventListener('click', propFunc);
